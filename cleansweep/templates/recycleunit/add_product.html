@@ -1,0 +1,46 @@
+{% extends 'RECYCLE_UNIT.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">ADD PRODUCT</h2></I>
+
+<form method="post" action="/myapp/addproductp/">
+       {%  csrf_token %}
+
+    <table class="table table bordered table table-hover" border="2">
+        <tr>
+            <th>PRODUCT NAME</th>
+            <td><input type="text" name="pname" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>AMOUNT</th>
+            <td><input type="number" name="amount"class="form-control"></td>
+        </tr>
+
+
+        <tr>
+            <th>RECYCLE UNIT LID</th>
+            <td>
+            <select name="rcid"class="form-control">
+
+                {% for i in data2 %}
+
+                <option value="{{ i.id }}">{{ i.unit_name }}</option>
+
+                {% endfor %}
+
+            </select>
+            </td>
+        </tr>
+
+
+         <tr>
+            <td></td>
+            <td><input type="submit" name="btn" class="btn btn-success"></td>
+        </tr>
+
+    </table>
+</form>
+     </center>
+{% endblock %}

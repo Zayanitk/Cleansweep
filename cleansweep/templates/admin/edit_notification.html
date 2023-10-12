@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Add </title>
+</head>
+<body>
+<center>
+    <h2 class="form-control"> Edit Notification</h2>
+
+<form method="post" action="/myapp/editnotifip/">
+       {%  csrf_token %}
+
+    <table border="3" class="table table-bordered table table-hover">
+                <input type="hidden" value="{{ data.id }}" name="enoti">
+
+        <tr>
+            <th>DATE</th>
+            <td><input type="date" name="date" value="{{ data.date }}"></td>
+        </tr>
+
+        <tr>
+            <th>NOTIFICATION</th>
+            <td><input type="text" name="noti" value="{{ data.notification }}"></td>
+        </tr>
+
+
+        <tr>
+            <td colspan="2"><input type="submit"></td>
+        </tr>
+
+    </table>
+</form>
+     </center>
+</body>
+
+</html>

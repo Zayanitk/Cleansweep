@@ -1,0 +1,49 @@
+{% extends 'RECYCLE_UNIT.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">VIEW ORDER MAIN</h2></I>
+<form action="/myapp/svordermain/" method="post">
+{% csrf_token %}
+
+{##}
+{# <h6>FROM</h6><input type="date" name="search1" class="btn btn-dark" >#}
+{#<h6>TO</h6>#}
+{##}
+{# <input type="date" name="search2"  class="btn btn-dark"><br><br>#}
+{##}
+{#    <input type="submit" value="go" class="btn btn-danger">#}
+
+    <table class="table table bordered table table-hover" border="2">
+            <tr>
+                <th>Serial Number</th>
+                <th>DATE</th>
+                <th>PRODUCT ID</th>
+               <th>USER LID</th>
+
+
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.order_date}}</td>
+                 <td>{{ i.PRODUCT.product_name }}</td>
+                <td>{{ i.USER.name}}</td>
+
+
+
+{#                <td><a href="/myapp/editomain/{{ i.id }}">Edit</a> </td>#}
+{#                <td><a href="/myapp/deleteomain/{{ i.id }}">Delete</a>  </td>#}
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+</form>
+</center>
+{% endblock %}

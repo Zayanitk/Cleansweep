@@ -1,0 +1,60 @@
+{% extends 'ADMIN.html' %}
+{% block body %}
+<center>
+
+<form action="/myapp/svrcunit/" method="post">
+{% csrf_token %}
+
+   <I><h2 class="form-control">VIEW RECYCLE UNIT</h2></I>
+
+
+{##}
+{# <h6>FROM</h6><input type="date" name="search1" class="btn btn-dark" >#}
+{#<h6>TO</h6>#}
+{##}
+{# <input type="date" name="search2"  class="btn btn-dark"><br><br>#}
+{##}
+{#    <input type="submit" value="go" class="btn btn-danger">#}
+
+
+    <table class="table table bordered table table-hover" border="2">
+            <tr style="...">
+
+                <th >SLNO</th>
+                <th> NAME</th>
+                <th> PLACE</th>
+                <th> POST</th>
+                <th> PIN</th>
+                <th> DISTRICT</th>
+                <th> PHNO</th>
+                <th> EMAIL ID</th>
+                <th> LOGIN ID</th>
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.unit_name }}</td>
+                <td>{{ i.place }}</td>
+                <td>{{ i.post }}</td>
+                <td>{{ i.pin }}</td>
+                <td>{{ i.district }}</td>
+                <td>{{ i.phone_number }}</td>
+                <td>{{ i.email_id }}</td>
+                <td>{{ i.unit_name}}</td>
+
+
+{#                <td><a href="/myapp/editrcunitg/{{ i.id }}"><input type="button" value="Edit" class="btn btn-success"></a> </td>#}
+{#                <td><a href="/myapp/deletedt/{{ i.id }}"><input type="button" value="Delete" class="btn btn-success"></a>  </td>#}
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+    </>
+</form>
+</center>
+{% endblock %}

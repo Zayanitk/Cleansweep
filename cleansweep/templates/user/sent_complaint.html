@@ -1,0 +1,29 @@
+{% extends 'USER.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">SENT COMPLAINT</h2></I>
+<form method="post" action="/myapp/sentcomplaintp/">
+    {% csrf_token %}
+    <center>
+    <table class="table table bordered table table-hover" border="2">
+
+
+        <tr>
+            <th>COMPLIANT</th>
+            <td><textarea name="complaint" class="form-control"></textarea></td>
+        </tr>
+
+
+
+         <tr>
+            <td></td>
+            <td><input type="submit" name="btn" class="btn btn-success"></td>
+        </tr>
+
+
+    </table>
+        </center>
+</form>
+</center>
+{% endblock %}

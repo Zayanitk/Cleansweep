@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Add </title>
+</head>
+<body>
+<center>
+    <h2>Add WASTE</h2>
+
+<form method="post" action="/myapp/editproductp/">
+       {%  csrf_token %}
+
+    <table>
+                <input type="hidden" value="{{ data.id }}" name="eproduct">
+
+        <tr>
+            <th>PRODUCT NAME</th>
+            <td><input type="text" name="pname" value="{{ data.product_name }}"></td>
+        </tr>
+
+            <tr>
+            <th>AMOUNT</th>
+            <td><input type="number" name="amount" value="{{ data.amount }}"></td>
+        </tr>
+
+
+        <tr>
+            <th>RECYCLE UNIT LID</th>
+            <td>
+            <select name="rcid">
+
+                {% for i in data2 %}
+
+                <option value="{{ i.id }}">{{ i.unit_name }}</option>
+
+                {% endfor %}
+
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit"></td>
+        </tr>
+
+    </table>
+</form>
+     </center>
+</body>
+</html>

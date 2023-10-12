@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Add </title>
+</head>
+<body>
+<center>
+    <h2>Add WASTE</h2>
+
+<form method="post" action="/myapp/editosubp/">
+       {%  csrf_token %}
+
+    <table>
+                <input type="hidden" value="{{ data.id }}" name="ecart">
+
+
+        <tr>
+            <th>ORDER MAIN ID</th>
+            <td>
+            <select name="omain">
+
+                {% for i in data2 %}
+
+                <option value="{{ i.id }}">{{ i.order_date}}</option>
+
+                {% endfor %}
+
+            </select>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <th>AMOUNT</th>
+            <td><input type="number" name="amt" value="{{ data.amount }}"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit"></td>
+        </tr>
+
+    </table>
+</form>
+     </center>
+</body>
+</html>

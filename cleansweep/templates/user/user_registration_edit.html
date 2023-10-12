@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>Add </title>
+</head>
+<form  method="post" action="/myapp/edituserp/" enctype="multipart/form-data" >
+    {% csrf_token %}
+<center>
+<h2>Edit User</h2>
+
+    <table border="2">
+                <input type="hidden" value="{{ data.id }}" name="euser">
+
+        <tr>
+            <th>NAME</th>
+            <td><input type="text" name="name" value="{{ data.name }}"></td>
+        </tr>
+
+
+        <tr>
+            <th>PHONE NUMBER</th>
+            <td><input type="number" name="phno" value="{{ data.phone_number }}"></td>
+        </tr>
+
+        <tr>
+            <th>EMAIL</th>
+            <td><input type="email" name="email" value="{{ data.email }}" ></td>
+        </tr>
+
+        <tr>
+            <th>PLACE</th>
+            <td><input type="text" name="place" value="{{ data.place }}"></td>
+        </tr>
+
+        <tr>
+            <th>POST</th>
+            <td><input type="text" name="post" value="{{ data.post }}"></td>
+        </tr>
+
+        <tr>
+            <th>PIN</th>
+            <td><input type="number" name="pin" value="{{ data.pin }}"> </td>
+        </tr>
+
+
+        <tr>
+            <th>DISTRICT</th>
+            <td><input type="text" name="dist" value="{{ data.district }}"> </td>
+        </tr>
+
+
+
+        <td colspan="2" align="center"> <input type="submit" name="btn"> </td>
+    </table>
+
+</center>
+</form>
+<body>
+
+</body>
+</html>

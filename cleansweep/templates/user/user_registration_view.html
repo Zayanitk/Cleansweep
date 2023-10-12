@@ -1,0 +1,47 @@
+{% extends 'USER.html' %}
+{% block body %}
+<center>
+
+<I><h2>VIEW USER</h2></I>
+
+<form>
+
+        <table border="2">
+            <tr>
+                <th>Serial Number</th>
+                <th> NAME</th>
+                <th> PHONE NUMBER</th>
+                <th> EMAIL</th>
+                <th> PLACE</th>
+                <th> POST</th>
+                <th> PIN</th>
+                <th> DISTRICT</th>
+                <th> USER LID</th>
+
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.phone_number }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.place }}</td>
+                <td>{{ i.post }}</td>
+                <td>{{ i.pin }}</td>
+                <td>{{ i.district }}</td>
+                <td>{{ i.LOGIN }}</td>
+
+
+                <td><a href="/myapp/edituser/{{ i.id }}">Edit</a> </td>
+                <td><a href="/myapp/deleteuser/{{ i.id }}">Delete</a>  </td>
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+</form>
+</center>
+{% endblock %}

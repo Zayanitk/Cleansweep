@@ -1,0 +1,54 @@
+{% extends 'USER.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">PROFILE VIEW</h2></I>
+
+    <table class="table table bordered table table-hover" border="2">
+        <tr>
+
+            <th>NAME</th>
+             <td>{{ data.name }}</td>
+        </tr>
+
+            <tr>
+            <th>PHONE NUMBER</th>
+            <td>{{ data.phone_number }}</td>
+            </tr>
+
+        <tr>
+            <th>EMAIL</th>
+                <td>{{ data.email }}</td>
+            </tr>
+
+
+        <tr>
+            <th>PLACE</th>
+                <td>{{ data.place }}</td>
+            </tr>
+
+        <tr>
+            <th>POST</th>
+                <td>{{ data.post }}</td>
+            </tr>
+
+        <tr>
+            <th>PIN</th>
+                <td>{{ data.pin }}</td>
+            </tr>
+
+        <tr>
+            <th>DISTRICT</th>
+                <td>{{ data.district}}</td>
+            </tr>
+
+                <tr>
+            <th>USER LID</th>
+                <td>{{ data.LOGIN.username}}</td>
+            </tr>
+
+
+ </table>
+</form>
+</center>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'USER.html' %}
+{% block body %}
+<center>
+
+<I><h2>VIEW FEEDBACK</h2></I>
+<form>
+
+        <table border="2">
+            <tr>
+                <th>SERIAL NUMBER</th>
+                 <th>DATE</th>
+                <th>FEEDBACK</th>
+                 <th>USER LID</th>
+
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.date }}</td>
+                 <td>{{ i.feedback }}</td>
+                <td>{{ i.USER.name }}</td>
+
+
+                <td><a href="/myapp/editfeedback/{{ i.id }}">Edit </a></td>
+                <td><a href="/myapp/deletefeedback/{{ i.id }}">Delete</a> </td>
+            </tr>
+
+
+            {% endfor %}
+
+
+        </table>
+</form>
+{% endblock %}

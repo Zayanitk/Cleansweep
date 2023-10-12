@@ -1,0 +1,39 @@
+{% extends 'ADMIN.html' %}
+{% block body %}
+<center>
+
+   <I><h2 class="form-control">VIEW CATEGORY</h2></I>
+
+<form>
+
+        <table border="3">
+            <tr>
+                <th>Serial Number</th>
+                <th>CATEGORY NAME</th>
+               <th>WORKER ID</th>
+
+
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.category_name }}</td>
+                <td>{{ i.WORKER }}</td>
+
+
+
+                <td><a href="/myapp/editcat/{{ i.id }}">Edit</a> </td>
+                <td><a href="/myapp/deletecat/{{ i.id }}">Delete</a>  </td>
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+</form>
+    </center>
+{% endblock %}

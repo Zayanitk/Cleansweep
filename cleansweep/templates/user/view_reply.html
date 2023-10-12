@@ -1,0 +1,46 @@
+{% extends 'USER.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">VIEW REPLY</h2></I>
+<form method="post" action="/myapp/svreply/">
+   {% csrf_token %}
+
+
+ <h6>FROM</h6><input type="date" name="search1" class="btn btn-dark" >
+<h6>TO</h6>
+
+ <input type="date" name="search2"  class="btn btn-dark"><br><br>
+
+    <input type="submit" value="go" class="btn btn-danger">
+
+    <table class="table table bordered table table-hover" border="2">
+
+
+    <table class="table table bordered table table-hover" border="2">
+            <tr>
+                <th>SL NO</th>
+                <th>DATE</th>
+                <th>COMPLAINT</th>
+                <th>USER LID</th>
+                <th>REPLY BY ADMIN</th>
+                <th>STATUS</th>
+            </tr>
+
+            {% for i in data %}
+                <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.complaint }}</td>
+            <td>{{ i.USER.name }}</td>
+            <td>{{ i.reply }}</td>
+             <td>{{ i.status }}</td>
+
+
+                </tr>
+            {% endfor %}
+
+  </table>
+</form>
+ </center>
+{% endblock %}

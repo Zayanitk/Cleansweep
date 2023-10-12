@@ -1,0 +1,46 @@
+{% extends 'PICKUP.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">VIEW PICKUP</h2></I>
+<form>
+
+
+    <table class="table table bordered table table-hover" border="2">
+            <tr>
+                <th>SERIAL NUMBER</th>
+                <th> NAME</th>
+                <th> PHONE NUMBER</th>
+                <th> ID PROOF</th>
+                <th> QUALIFICATION</th>
+                <th> EXPERIANCE</th>
+                <th> PICKUP LID</th>
+
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.phone_number }}</td>
+                <td>{{ i.id_proof }}</td>
+                <td>{{ i.qualification }}</td>
+                <td>{{ i.experiance }}</td>
+                <td>{{ i.LOGIN.username }}</td>
+
+
+{##}
+{##}
+{#                <td><a href="/myapp/editpickup/{{ i.id }}">Edit</a> </td>#}
+{#                <td><a href="/myapp/deletepickup/{{ i.id }}">Delete</a>  </td>#}
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+
+</form>
+</center>
+{% endblock %}

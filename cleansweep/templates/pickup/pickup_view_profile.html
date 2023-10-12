@@ -1,0 +1,47 @@
+{% extends 'PICKUP.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">VIEW PROFILE</h2></I>
+<form>
+
+    <table class="table table bordered table table-hover" border="2">
+        <tr>
+
+            <th>NAME</th>
+             <td>{{ data.name }}</td>
+        </tr>
+
+            <tr>
+            <th>PHONE NUMBER</th>
+            <td>{{ data.phone_number }}</td>
+            </tr>
+
+            <tr>
+            <th>ID_PROOF</th>
+             <td>{{ data.id_proof }}</td>
+            </tr>
+
+
+        <tr>
+            <th>QUALIFICATION</th>
+                <td>{{ data.qualification }}</td>
+            </tr>
+
+
+        <tr>
+            <th>EXPERIANCE</th>
+                <td>{{ data.experiance }}</td>
+            </tr>
+
+
+        <tr>
+            <th>PICKUP LOGIN ID</th>
+                <td>{{ data.name }}</td>
+            </tr>
+
+ </table>
+</form>
+</center>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'ADMIN.html' %}
+{% block body %}
+<center>
+
+   <I><h2 class="form-control">VIEW NOTIFICATION</h2></I>
+<form>
+
+
+        <table border="3">
+            <tr>
+                <th>Serial Number</th>
+                <th> DATE</th>
+                <th> NOTIFICATION</th>
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.notification }}</td>
+
+
+                <td><a href="/myapp/editnotifi/{{ i.id }}">Edit</a> </td>
+                <td><a href="/myapp/deletenotifi/{{ i.id }}">Delete</a>  </td>
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+
+</form>
+</center>
+{% endblock %}

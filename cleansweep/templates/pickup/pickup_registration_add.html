@@ -1,0 +1,48 @@
+{% extends 'PICKUP.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">PICKUP ADD</h2></I>
+<form  method="post" action="/myapp/addpickupp/" enctype="multipart/form-data" >
+    {% csrf_token %}
+
+    <table border="3" class="table table borered table-hover">
+        <tr>
+            <th>NAME</th>
+            <td><input type="text" name="name" class="form-control"></td>
+        </tr>
+
+
+        <tr>
+            <th>PHONE NUMBER</th>
+            <td><input type="number" name="phno" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>ID PROOF</th>
+            <td><input type="text" name="idproof"class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>QUALIFICATION</th>
+            <td><input type="text" name="quali"class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>EXPERIANCE</th>
+            <td><input type="text" name="exp"class="form-control"></td>
+        </tr>
+
+
+
+
+       <tr>
+            <td></td>
+            <td><input type="submit" name="btn" class="btn btn-success"></td>
+        </tr>
+    </table>
+
+</form>
+</center>
+{% endblock %}
+

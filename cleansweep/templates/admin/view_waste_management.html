@@ -1,0 +1,36 @@
+{% extends 'ADMIN.html' %}
+{% block body %}
+<center>
+
+   <I><h2 class="form-control">VIEW CATEGORY</h2></I>
+<form>
+
+        <table border="3" class="table table bordered table-hover">
+            <tr>
+                <th>SLNO</th>
+                <th> WASTE TYPE</th>
+                <th> WASTE RATE</th>
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.type }}</td>
+                <td>{{ i.rate }}</td>
+
+
+                <td><a href="/myapp/editwasteg/{{ i.id }}">Edit</a> </td>
+                <td><a href="/myapp/deletewaste/{{ i.id }}">Delete</a>  </td>
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+
+</form>
+{% endblock %}
+{% endblock %}

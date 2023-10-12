@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+
+</head>
+<form  method="post" action="/myapp/editpickupp/" enctype="multipart/form-data" >
+    {% csrf_token %}
+<center>
+<h2 class="form-control">EDIT RECYCLE UNIT</h2>
+
+    <table border="2" class="table table bordered table-hover" >
+                <input type="hidden" value="{{ data.id }}" name="epk">
+
+        <tr>
+            <th>NAME</th>
+            <td><input type="text" name="name" value="{{ data.name }}"class="form-control"></td>
+        </tr>
+
+
+        <tr>
+            <th>PHONE NUMBER</th>
+            <td><input type="number" name="phno" value="{{ data.phone_number }}"class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>ID PROOF</th>
+            <td><input type="text" name="idproof" value="{{ data.id_proof }}" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>QUALIFICATION</th>
+            <td><input type="text" name="quali" value="{{ data.qualification }}"class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>EXPERIANCE</th>
+            <td><input type="text" name="exp" value="{{ data.experiance }}" class="form-control"></td>
+        </tr>
+
+
+     <tr>
+            <td></td>
+            <td><input type="submit" name="btn" class="btn btn-success"></td>
+        </tr>    </table>
+
+</center>
+</form>
+<body>
+
+</body>
+</html>

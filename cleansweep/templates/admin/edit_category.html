@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<center>
+    <h2>Add WASTE</h2>
+
+<form method="post" action="/myapp/editcatp/">
+       {%  csrf_token %}
+
+    <table border="3" class="table table-bordered table table-hover">
+                <input type="hidden" value="{{ data.id }}" name="ecate">
+
+        <tr>
+            <th>CATEGORY NAME</th>
+            <td><input type="text" name="catname" value="{{ data.category_name }}"></td>
+        </tr>
+
+        <tr>
+            <th>WORKER LID</th>
+            <td>
+            <select name="wrkid">
+
+                {% for i in data2 %}
+
+                <option value="{{ i.id }}">{{ i.name }}</option>
+
+                {% endfor %}
+
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit"></td>
+        </tr>
+
+    </table>
+</form>
+     </center>
+</body>
+</html>

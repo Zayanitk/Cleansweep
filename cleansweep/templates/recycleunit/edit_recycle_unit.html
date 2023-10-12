@@ -1,0 +1,60 @@
+{% extends 'ADMIN.html' %}
+
+{% block body %}
+
+    <meta charset="UTF-8">
+    <title>Edit Recycle Unit</title>
+</head>
+<form  method="post" action="/myapp/editrcunitp/" >
+    {% csrf_token %}
+<center>
+<h2 class="form-control">Edit Recycle Unit</h2>
+
+    <table border="3" class="table table-bordered table table-hover">
+            <input type="hidden" value="{{ data.id }}" name="ercu">
+
+        <tr>
+            <th>UNIT NAME</th>
+            <td><input type="text" name="name" value="{{ data.unit_name }}" class="form-control"></td>
+        </tr>
+
+
+        <tr>
+            <th>PLACE</th>
+            <td><input type="text" name="place" value="{{ data.place }}" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>DISTRICT</th>
+            <td><input type="text" name="dist" value="{{ data.district }}" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>POST</th>
+            <td><input type="text" name="post" value="{{ data.post }}" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>PIN</th>
+            <td><input type="number" name="pi" value="{{ data.pin }}" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>EMAIL ID</th>
+            <td><input type="text" name="email" value="{{ data.email_id }}" class="form-control"> </td>
+        </tr>
+
+        <tr>
+            <th>PHONE NUMBER</th>
+            <td><input type="number" name="phno" value="{{ data.phone_number }}" class="form-control"> </td>
+        </tr>
+
+
+
+        <td colspan="2" align="center"> <input type="submit" name="btn" class="btn btn-success"> </td>
+    </table>
+
+</center>
+</form>
+
+{% endblock %}

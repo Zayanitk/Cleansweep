@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h2>Edit Suballocation</h2>
+
+
+<form method="post" action="/myapp/editrequestp/" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <table border="2">
+            <input type="hidden" value="{{ data.id }}" name="erequest">
+
+        <tr>
+            <th>USER ID</th>
+            <td>
+            <select name="userid">
+
+                {% for i in data2 %}
+
+                <option value="{{ i.id }}">{{ i.name }}</option>
+
+                {% endfor %}
+
+            </select>
+            </td>
+        </tr>
+
+
+        <tr>
+            <th>REQUEST</th>
+            <td><input type="text" name="request" value="{{ data.request }}"> </td>
+        </tr>
+
+
+
+    <tr>
+        <td colspan="2" align="center">
+            <input type="submit"  >
+        </td>
+    </tr>
+
+    </table>
+</form>
+</center>
+</body>
+</html>

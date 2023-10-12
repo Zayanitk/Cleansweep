@@ -1,0 +1,37 @@
+{% extends 'PICKUP.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">VIEW WASTE REQUEST</h2></I>
+<form>
+
+    {% csrf_token %}
+    <center>
+    <table class="table table bordered table table-hover" border="2">
+            <tr>
+                <th >Serial No</th>
+                <th>USER ID</th>
+                <th>REQUEST</th>
+                <th>STATUS</th>
+            </tr>
+
+            {% for i in data %}
+                <tr>
+                <td >{{ forloop.counter }}</td>
+                <td>{{ i.USER.name }}</td>
+                <td>{{ i.request}}</td>
+                <td>{{ i.status}}</td>
+
+
+
+{#                <td><a href="/myapp/editrequest/{{ i.id }}">Edit </a></td>#}
+{#                <td><a href="/myapp/deleterequest/{{ i.id }}">Delete</a> </td>#}
+                </tr>
+
+            {% endfor %}
+        </table>
+
+</form>
+</center>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends 'ADMIN.html' %}
+{% block body %}
+<center>
+
+   <I><h2 class="form-control">VIEW COMPLAINT</h2></I>
+<form method="post" action="/myapp/svcomplaints/">
+{% csrf_token %}
+
+
+ <h6>FROM</h6><input type="date" name="search1" class="btn btn-dark" >
+<h6>TO</h6>
+
+ <input type="date" name="search2"  class="btn btn-dark"><br><br>
+
+    <input type="submit" value="go" class="btn btn-danger">
+
+
+    <table class="table table bordered table table-hover" border="2">
+            <tr>
+                <th>SL NO</th>
+                <th>DATE</th>
+                <th>COMPLAINT BY USER</th>
+                <th>USER LID</th>
+
+            </tr>
+
+            {% for i in data %}
+                <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.complaint }}</td>
+            <td>{{ i.USER.name }}</td>
+
+            <td><a href="/myapp/sentreply/{{ i.id }}"><input type="button" value="Sent Reply" class="btn btn-success"></a>  </td>
+
+
+                </tr>
+            {% endfor %}
+
+  </table>
+</form>
+</center>
+{% endblock %}

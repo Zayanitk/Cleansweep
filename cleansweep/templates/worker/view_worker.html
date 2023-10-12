@@ -1,0 +1,64 @@
+{% extends 'WORKER.html' %}
+{% block body %}
+<center>
+
+<I><h2>VIEW WORKER</h2></I>
+       {%  csrf_token %}
+
+<form>
+
+
+        <table border="2">
+            <tr>
+                <th>Serial Number</th>
+                <th> NAME</th>
+                <th> PHONE NUMBER</th>
+                <th> GENDER</th>
+                <th> QUALIFICATION</th>
+                <th> DOB</th>
+                <th> PLACE</th>
+                <th> POST</th>
+                <th> PIN</th>
+                <th>DISTRICT</th>
+                <th>EMAIL ID</th>
+                <th>PHOTO</th>
+                <th>ID PROOF</th>
+                <th>STATUS</th>
+                <th>LOGIN ID</th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.phone_number }}</td>
+                <td>{{ i.gender }}</td>
+                <td>{{ i.qualification }}</td>
+                <td>{{ i.dob }}</td>
+                <td>{{ i.place }}</td>
+                <td>{{ i.post }}</td>
+                <td>{{ i.pin }}</td>
+                <td>{{ i.district }}</td>
+                <td>{{ i.email_id }}</td>
+
+            <td><img src="{{ i.photo }}" width="100px" height="100px"> </td>
+
+                <td>{{ i.id_proof }}</td>
+                <td>{{ i.status }}</td>
+                <td>{{ i.LOGIN }}</td>
+
+
+
+                <td><a href="/myapp/editworkerg/{{ i.id }}">Edit</a> </td>
+                <td><a href="/myapp/deleteworker/{{ i.id }}">Delete</a>  </td>
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+
+</form>
+</center>
+{% endblock %}

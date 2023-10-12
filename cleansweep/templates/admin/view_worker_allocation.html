@@ -1,0 +1,35 @@
+{% extends 'ADMIN.html' %}
+{% block body %}
+<center>
+
+   <I><h2 class="form-control">VIEW WORK ALLOCATION</h2></I>
+<form>
+
+    {% csrf_token %}
+
+        <table border="3" class="table table bordered table-hover">
+            <tr>
+                <th>Serial No</th>
+                <th>WORKER LID</th>
+                <th>AREA</th>
+                <th>DATE</th>
+            </tr>
+
+            {% for i in data %}
+                <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.WORKER.name }}</td>
+                <td>{{ i.area}}</td>
+                    <td>{{ i.date}}</td>
+
+
+                <td><a href="/myapp/editwalloc/{{ i.id }}">Edit </a></td>
+                <td><a href="/myapp/deletewalloc/{{ i.id }}">Delete</a> </td>
+                </tr>
+
+            {% endfor %}
+        </table>
+
+</form>
+</center>
+{% endblock %}

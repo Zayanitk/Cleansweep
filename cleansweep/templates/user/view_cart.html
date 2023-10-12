@@ -1,0 +1,41 @@
+{% extends 'USER.html' %}
+{% block body %}
+<center>
+
+<I><h2>VIEW CART</h2></I>
+<form>
+
+
+        <table border="2">
+            <tr>
+                <th>Serial Number</th>
+                <th>DATE</th>
+                <th>PRODUCT ID</th>
+               <th>USER LID</th>
+
+
+
+                <th></th>
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.date}}</td>
+                 <td>{{ i.PRODUCT.product_name }}</td>
+                <td>{{ i.USER }}</td>
+
+
+
+                <td><a href="/myapp/editcart/{{ i.id }}">Edit</a> </td>
+                <td><a href="/myapp/deletecart/{{ i.id }}">Delete</a>  </td>
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+</form>
+</center>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Add </title>
+</head>
+<body>
+<center>
+    <h2 class="form-control">Add WASTE</h2>
+
+<form method="post" action="/myapp/editwastep/">
+       {%  csrf_token %}
+
+    <table>
+                <input type="hidden" value="{{ data.id }}" name="ewaste" class="form-control">
+
+        <tr>
+            <th>WASTE TYPE</th>
+            <td><input type="text" name="type" value="{{ data.type }}" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <th>WASTE RATE</th>
+            <td><input type="number" name="rate" value="{{ data.rate }}" class="form-control"></td>
+        </tr>
+
+
+        <tr>
+            <td></td>
+            <td><input type="submit" name="btn" class="btn btn-success"></td>
+        </tr>
+
+    </table>
+</form>
+     </center>
+</body>
+</html>

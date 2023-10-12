@@ -1,0 +1,46 @@
+{% extends 'WORKER.html' %}
+{% block body %}
+<center>
+
+       {%  csrf_token %}
+<form action="/myapp/svuserrequest/ "method="post">
+
+    {% csrf_token %}
+
+ <h6>FROM</h6><input type="date" name="search1" class="btn btn-dark" >
+<h6>TO</h6>
+
+ <input type="date" name="search2"  class="btn btn-dark"><br><br>
+
+    <input type="submit" value="go" class="btn btn-danger">
+
+
+
+<I><h2 class="form-control">VIEW USER REQUEST</h2></I>
+
+    <table class="table table bordered table table-hover" border="2">
+
+            <tr>
+                <th>Serial No</th>
+                <th>USER ID</th>
+                <th>REQUEST</th>
+                <th>STATUS</th>
+            </tr>
+
+            {% for i in data %}
+                <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.USER.name }}</td>
+                <td>{{ i.request}}</td>
+                    <td>{{ i.status}}</td>
+
+            <td><a href="/myapp/approve/{{ i.id }}"><input type="button" value="Approve" class="btn btn-success"></a> </td>
+            <td><a href="/myapp/reject/{{ i.id }}"><input type="button" value="Reject" class="btn btn-success"></a> </td>
+
+            {% endfor %}
+        </table>
+</form>
+</center>
+{% endblock %}
+
+

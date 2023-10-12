@@ -1,0 +1,37 @@
+{% extends 'RECYCLE_UNIT.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">VIEW ORDER SUB</h2></I>
+
+<form>
+
+
+    <table class="table table bordered table table-hover" border="2">
+            <tr>
+                <th>SERIAL NUMBER</th>
+                <th>ORDER MAIN ID</th>
+                <th>AMOUNT</th>
+
+            </tr>
+
+            {% for i in data %}
+
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.ORDER_MAIN.order_date}}</td>
+                 <td>{{ i.amount }}</td>
+
+
+
+{#                <td><a href="/myapp/editosub/{{ i.id }}">Edit</a> </td>#}
+{#                <td><a href="/myapp/deleteosub/{{ i.id }}">Delete</a>  </td>#}
+            </tr>
+
+            {% endfor %}
+
+
+        </table>
+</form>
+</center>
+{% endblock %}

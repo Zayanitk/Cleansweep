@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Add </title>
+</head>
+<body>
+<center>
+    <h2>Add WASTE</h2>
+
+<form method="post" action="/myapp/editpaymentp/">
+       {%  csrf_token %}
+
+    <table>
+                <input type="hidden" value="{{ data.id }}" name="epay">
+
+        <tr>
+            <th>DATE</th>
+            <td><input type="date" name="date" value="{{ data.date }}"></td>
+        </tr>
+
+            <tr>
+            <th>AMOUNT</th>
+            <td><input type="number" name="amount" value="{{ data.date }}"></td>
+        </tr>
+
+        <tr>
+            <th>USER LID</th>
+            <td>
+            <select name="uid">
+
+                {% for i in data2 %}
+
+                <option value="{{ i.id }}">{{ i.name}}</option>
+
+                {% endfor %}
+
+            </select>
+            </td>
+        </tr>
+
+
+        <tr>
+            <th>ORDER MAIN ID</th>
+            <td>
+            <select name="omid">
+
+                {% for i in data3 %}
+
+                <option value="{{ i.id }}">{{ i.order_date }}</option>
+
+                {% endfor %}
+
+            </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit"></td>
+        </tr>
+
+    </table>
+</form>
+     </center>
+</body>
+</html>

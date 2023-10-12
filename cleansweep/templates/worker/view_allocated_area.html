@@ -1,0 +1,38 @@
+{% extends 'WORKER.html' %}
+{% block body %}
+<center>
+
+<I><h2 class="form-control">VIEW ALLOCATED AREA</h2></I>
+       {%  csrf_token %}
+<form method="post" action="/myapp/svallocatedarea/">
+
+    {% csrf_token %}
+
+ <h6>FROM</h6><input type="date" name="search1" class="btn btn-dark" >
+<h6>TO</h6>
+
+ <input type="date" name="search2"  class="btn btn-dark"><br><br>
+
+    <input type="submit" value="go" class="btn btn-danger">
+
+    <table class="table table bordered table table-hover w-75" border="2">
+            <tr>
+                <th>Serial No</th>
+                <th>WORKER LID</th>
+                <th>AREA</th>
+                <th>DATE</th>
+            </tr>
+
+            {% for i in data %}
+                <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ i.WORKER.name }}</td>
+                <td>{{ i.area}}</td>
+               <td>{{ i.date}}</td>
+
+            {% endfor %}
+        </table>
+
+</form>
+</center>
+{% endblock %}
